@@ -4,7 +4,7 @@ public class Main {
         Mattoncino m2= new Mattoncino(2, new Colore(0,0,255), new Dimensioni(4,8,6,2.3));
         Mattoncino m3= new Mattoncino(3, new Colore(0,255,0), new Dimensioni(3,6,8,3.2));
 
-        public void pesoTotale{
+
 
         }
     }
