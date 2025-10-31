@@ -3,12 +3,6 @@ public class Colore {
     private int g;
     private int b;
 
-    public Colore(int r, int g, int b){
-        this.r=r;
-        this.g=g;
-        this.b=b;
-    }
-
     public int getR() {
         return r;
     }
@@ -22,14 +16,41 @@ public class Colore {
     }
 
     public void setR(int r) {
-        this.r = r;
+        if(r >=0 && r <= 255){
+            this.r=r;
+        }else{
+            this.r=-1;
+        }
     }
 
     public void setG(int g) {
-        this.g = g;
+        if(g >=0 && g <= 255){
+            this.g=g;
+        }else{
+            this.g=-1;
+        }
     }
 
     public void setB(int b) {
-        this.b = b;
+        if(b >=0 && b <= 255){
+            this.b=b;
+        }else{
+            this.b=-1;
+        }
     }
+
+    public Colore(int r, int g, int b) {
+        this.setR(r);
+        this.setG(g);
+        this.setB(b);
+    }
+
+    public boolean equals(Colore coloreConfrontato) {
+        return r == coloreConfrontato.r && g == coloreConfrontato.g && b == coloreConfrontato.b;
+    }
+
+    public String toString(){
+        return "Colore[ r: " + r + ", g: " + g + ", b: " +b + "]";
+    }
+
 }

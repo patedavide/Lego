@@ -1,46 +1,55 @@
 public class Dimensioni {
-    private int larghezza;
-    private int lunghezza;
-    private int altezza;
-    private double peso;
+    private float larghezza;
+    private float lunghezza;
+    private float altezza;
 
-    public Dimensioni(int larghezza, int lunghezza, int altezza, double peso){
-        this.larghezza = 1;
-        this.lunghezza = 1;
-        this.altezza = 1;
-        this.peso= 1.5;
-    }
-
-    public int getLarghezza() {
+    public float getLarghezza() {
         return larghezza;
     }
 
-    public void setLarghezza(int larghezza) {
-        this.larghezza = larghezza;
+    public void setLarghezza(float larghezza) {
+        if(larghezza > 0){
+            this.larghezza=larghezza;
+        } else{
+            this.larghezza=-1;
+        }
     }
 
-    public int getLunghezza() {
+    public float getLunghezza() {
         return lunghezza;
     }
 
-    public void setLunghezza(int lunghezza) {
-        this.lunghezza = lunghezza;
+    public void setLunghezza(float lunghezza) {
+        if(lunghezza > 0){
+            this.lunghezza=lunghezza;
+        } else{
+            this.lunghezza=-1;
+        }
     }
 
-    public int getAltezza() {
+    public float getAltezza() {
         return altezza;
     }
 
-    public void setAltezza(int altezza) {
-        this.altezza = altezza;
+    public void setAltezza(float altezza) {
+        if(altezza > 0){
+            this.altezza=altezza;
+        } else{
+            this.altezza=-1;
+        }
     }
 
-    public double getPeso() {
-        return peso;
+    public Dimensioni(float larghezza, float lunghezza, float altezza){
+        this.setLarghezza(larghezza);
+        this.setLunghezza(lunghezza);
+        this.setAltezza(altezza);
     }
 
-    public void setPeso(double peso) {
-        this.peso = peso;
+    public boolean equals(Dimensioni dimensioniConfrontate) {
+        return larghezza == dimensioniConfrontate.larghezza && lunghezza == dimensioniConfrontate.lunghezza && altezza == dimensioniConfrontate.altezza;
     }
 
+    public String toString(){
+        return "Dimensioni[ larghezza: " + larghezza + ", lunghezza: " + lunghezza + ", altezza: " + altezza + "]";
+    }
 }
